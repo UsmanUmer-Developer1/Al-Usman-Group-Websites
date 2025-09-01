@@ -275,58 +275,6 @@ a {text-decoration:none; color:inherit;}
 
 
 
-.chart-container {
-display: flex;
-justify-content: center;
-padding: 40px 20px;
-overflow-x: auto;
-}
-.org-chart {
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-.level {
-display: flex;
-justify-content: center;
-flex-wrap: wrap;
-margin: 20px 0;
-}
-.box {
-background: #0077cc;
-color: white;
-padding: 14px 20px;
-border-radius: 6px;
-margin: 10px;
-min-width: 160px;
-text-align: center;
-position: relative;
-box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-.box.manager {
-background: #005fa3;
-}
-.box::after {
-content: "";
-position: absolute;
-top: -20px;
-left: 50%;
-transform: translateX(-50%);
-width: 2px;
-height: 20px;
-background: #ccc;
-}
-.level:first-child .box::after {
-display: none;
-}
-@media(max-width:768px) {
-.level {flex-direction: column;}
-.box {min-width: 200px;}
-.box::after {left: -20px; top: 50%; transform: translateY(-50%); width: 20px; height: 2px;}
-}
-
-
-
 /* Footer Section */
 .footer {
   background-color: #181818;
