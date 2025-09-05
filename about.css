@@ -142,6 +142,22 @@ a {text-decoration:none; color:inherit;}
   margin-bottom: 0.5rem;
   font-family: 'Poppins', sans-serif;
 }
+/* CEO Section */
+.team-ceo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  margin-top: 3rem;
+}
+.img-frame{
+  border: 1px solid #323232;
+}
+
+.team-member.highlight {
+  background: rgba(143, 143, 143, 0.05);
+  transform: scale(1.05);
+}
+
 
 .staff-text h3 {
   font-size: 2rem;
