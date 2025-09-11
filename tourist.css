@@ -49,8 +49,19 @@ a {text-decoration:none; color:inherit;}
   width: 5rem;
   height: 5rem;
 }
-.navbar span {
-  color:#4f9dff;
+.logo h4{
+  animation: changeColor 3s infinite;
+}
+@keyframes changeColor {
+  50% { color: red }
+}
+
+.logo span {
+  color:#1f84ff;
+  animation: changing 3.5s infinite;
+}
+@keyframes changing {
+  50% { color: white; }
 }
 .navbar nav a {
   margin-left:1.5rem;
@@ -119,12 +130,61 @@ a {text-decoration:none; color:inherit;}
 
 
 
+.tourist-video {
+  position: relative;
+  width: 100%;
+  height: 75vh; /* screen height ka 50% */
+  overflow: hidden;
+  margin-top: 6.5rem;
+}
+
+.tourist-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* video ko crop karke full cover karega */
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.3); /* halka dark overlay */
+}
+
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .tourist-video {
+    height: 45vh; /* mobile me thoda kam height */
+  }
+
+
+}
+
+/* Very Small Phones */
+@media (max-width: 480px) {
+  .tourist-video {
+    height: 50vh; 
+  }
+
+
+}
+
+
+
 
 /* Section */
 .tour-gallery {
   text-align: center;
   padding: 50px 20px;
-  margin-top: 6rem;
   color: white;
 }
 

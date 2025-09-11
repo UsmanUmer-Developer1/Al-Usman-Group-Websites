@@ -38,8 +38,19 @@ a {text-decoration:none; color:inherit;}
   width: 5rem;
   height: 5rem;
 }
-.navbar span {
-  color:#4f9dff;
+.logo h4{
+  animation: changeColor 3s infinite;
+}
+@keyframes changeColor {
+  50% { color: red }
+}
+
+.logo span {
+  color:#1f84ff;
+  animation: changing 3.5s infinite;
+}
+@keyframes changing {
+  50% { color: white; }
 }
 .navbar nav a {
   margin-left:1.5rem;

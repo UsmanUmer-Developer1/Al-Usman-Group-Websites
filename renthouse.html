@@ -70,7 +70,7 @@
 
   <!-- Content -->
   <div class="hero-content">
-    <h1 class="fade-in">Welcome to <span>Al-Usman Rent a House</span></h1>
+    <h1 class="fade-in">Welcome to <span>Al-Usman Real Estate</span></h1>
     <p class="slide-up">Book reliable cars, tours & properties at the best prices</p>
     <a href="contact.html" class="btn-glow">Contact Now</a>
   </div>
@@ -160,6 +160,48 @@
 
 
 
+<!-- DHA Property Booking Form -->
+<section class="booking-form">
+  <h2>Book Your DHA Property</h2>
+  <form id="propertyForm">
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="03xx-xxxxxxx" required>
+    </div>
+
+    <div class="form-group">
+      <label for="property">Property Name</label>
+      <input type="text" id="property" name="property" placeholder="e.g. Modern Villa in DHA" required>
+    </div>
+
+    <div class="form-group">
+      <label for="type">Property Type</label>
+      <select id="type" name="type" required>
+        <option value="">-- Select --</option>
+        <option value="For Rent">For Rent</option>
+        <option value="For Sale">For Sale</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="budget">Budget</label>
+      <input type="text" id="budget" name="budget" placeholder="e.g. 2 Crore / 1 Lac Rent" required>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Additional Requirements</label>
+      <textarea id="message" name="message" rows="4" placeholder="Write your requirements here..."></textarea>
+    </div>
+
+    <button type="submit" class="btn-submit">Book Now</button>
+  </form>
+</section>
+
 
 
 
@@ -196,7 +238,7 @@
     <div class="footer-col" data-aos="zoom-in">
       <h4>Contact Info</h4>
       <p>Email: <a href="mailto:Munirahmad1183">munirahmed1183.com</a></p>
-      <p>Email: <a href="mailto:usmanmuneer1183">usmanmuneer1183.com</a></p>
+            <p>Email: <a href="mailto:alusmangroup1">alusmangroup1.com</a></p>
 
       <p>Call us now: <br /></p>
      <a href="tel:+923114111183"><p>0311-4111183</p></a>
@@ -220,5 +262,35 @@
 
 
 <script src="script.js"></script>
+<script>
+  document.getElementById("propertyForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let property = document.getElementById("property").value;
+  let type = document.getElementById("type").value;
+  let budget = document.getElementById("budget").value;
+  let message = document.getElementById("message").value;
+
+  let whatsappMessage = `*DHA Property Inquiry*%0A
+Name: ${name}%0A
+Phone: ${phone}%0A
+Property: ${property}%0A
+Type: ${type}%0A
+Budget: ${budget}%0A
+Requirements: ${message}`;
+
+  // ✅ Apna WhatsApp number yahan dalna (+92 format me, bina +)
+  let whatsappNumber = "923004221975";
+
+  // ✅ Yahan variable use karo
+  let url = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+  window.open(url, "_blank");
+});
+
+</script>
+
+
 </body>
 </html>
