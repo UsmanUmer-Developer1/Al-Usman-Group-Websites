@@ -354,6 +354,32 @@
   </div>
 
 
+
+
+
+  <div class="booking-box">
+    <h2>Book Your Service</h2>
+    <form id="bookingForm">
+      <input type="text" id="bk-name" placeholder="Your Name" required>
+      <input type="email" id="bk-email" placeholder="Your Email" required>
+      <input type="text" id="bk-phone" placeholder="Your Phone" required>
+
+      <!-- ✅ Services Dropdown -->
+      <select id="bk-product" required>
+        <option value="" disabled selected>Select Service</option>
+        <option value="Car Wash">Car Wash</option>
+        <option value="Oil Change">Oil Change</option>
+        <option value="Engine Tuning">Engine Tuning</option>
+        <option value="AC Service">AC Service</option>
+        <option value="Wheel Alignment">Wheel Alignment</option>
+      </select>
+
+      <button type="submit"> Book via WhatsApp</button>
+    </form>
+  </div>
+
+  
+
 <!-- Footer Section -->
 <footer class="footer" data-aos="zoom-in">
   <div class="footer-container" data-aos="zoom-in">
@@ -396,7 +422,6 @@
 <a href="tel:+923334111183"><p>0333-4111183</p></a>
       <div class="social-icons">
   <a href="https://www.facebook.com/profile.php?id=100071711990927" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-  <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
   <a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a>
   <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
 </div>
@@ -479,8 +504,33 @@
     });
 
 
-  
-</script>
 
+
+
+const whatsappNumber = "923004221975"; // ✅ apna WhatsApp number yahan lagao
+    document.getElementById("bookingForm").addEventListener("submit", function(e){
+      e.preventDefault();
+
+      const name = document.getElementById("bk-name").value.trim();
+      const email = document.getElementById("bk-email").value.trim();
+      const phone = document.getElementById("bk-phone").value.trim();
+      const product = document.getElementById("bk-product").value;
+
+      if(!name || !email || !phone || !product){
+        alert("Please fill all required fields.");
+        return;
+      }
+
+      // ✅ WhatsApp ka sahi message format (%0A = line break)
+      const message = `*📌 New Booking Request*%0A` +
+                      `👤 Name: ${name}%0A` +
+                      `📧 Email: ${email}%0A` +
+                      `📞 Phone: ${phone}%0A` +
+                      `🛠 Service: ${product}`;
+
+      const waLink = `https://wa.me/${whatsappNumber}?text=${message}`;
+      window.open(waLink, "_blank");
+    });
+</script>
 </body>
 </html>

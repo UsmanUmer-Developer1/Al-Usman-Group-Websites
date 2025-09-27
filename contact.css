@@ -39,19 +39,14 @@ a {text-decoration:none; color:inherit;}
   height: 5rem;
 }
 .logo h4{
-  animation: changeColor 3s infinite;
+  color: red;
 }
-@keyframes changeColor {
-  50% { color: red }
-}
+
 
 .logo span {
   color:#1f84ff;
-  animation: changing 3.5s infinite;
 }
-@keyframes changing {
-  50% { color: white; }
-}
+
 .navbar nav a {
   margin-left:1.5rem;
   font-size:1rem;
@@ -119,18 +114,18 @@ a {text-decoration:none; color:inherit;}
 
 
 
-
-
     /* Hero Section */
     .contact-hero {
       position: relative;
       height: 50vh;
       display: flex;
-      align-items: center;
+      align-items: center;  
       justify-content: center;
       text-align: center;
       overflow: hidden;
       margin-top: 6rem;
+      background: linear-gradient(135deg, #0d1b3f, #001547, #ff0040);
+
     }
 
     .contact-hero .bg-video {

@@ -38,18 +38,14 @@ a {text-decoration:none; color:inherit;}
 }
 .logo h4{
   animation: changeColor 3s infinite;
+  color: red;
 }
-@keyframes changeColor {
-  50% { color: red }
-}
+
 
 .logo span {
   color:#1f84ff;
-  animation: changing 3.5s infinite;
 }
-@keyframes changing {
-  50% { color: white; }
-}
+
 .navbar nav a {
   margin-left:1.5rem;
   font-size:1rem;
@@ -741,6 +737,74 @@ a {text-decoration:none; color:inherit;}
       from { transform: scale(0.8); opacity: 0; }
       to { transform: scale(1); opacity: 1; }
     }
+
+
+    
+  .booking-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0px 8px 25px rgba(0,0,0,0.2);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      animation: fadeInUp 1s ease;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .booking-box h2 {
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    .booking-box input,
+    .booking-box select {
+      width: 100%;
+      padding: 14px;
+      margin: 10px 0;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      outline: none;
+      transition: all 0.3s;
+      font-size: 15px;
+    }
+
+    .booking-box input:focus,
+    .booking-box select:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 8px rgba(0,123,255,0.4);
+    }
+
+    .booking-box button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      background: #25d366;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 12px;
+      transition: transform 0.2s, background 0.3s;
+    }
+
+    .booking-box button:hover {
+      background: #1ebd5a;
+      transform: scale(1.05);
+    }
+
+    /* Responsive */
+    @media(max-width: 500px){
+      .booking-box { padding: 20px; }
+    }
+
 
 /* Footer Section */
 .footer {

@@ -1,6 +1,18 @@
-/* RESET */
-* {margin:0; padding:0; box-sizing:border-box;}
-body {font-family: Arial, sans-serif; background:#0f0f0f; color:#fff;}
+body{
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0d1b3f, #001547, #ff0040);
+  background-size: 500% 500%;
+  animation: bgMove 18s ease infinite;
+  color:#fff;
+  line-height:1.6;
+}
+
+/* Background Gradient Animation */
+@keyframes bgMove {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
+}
 
 /* NAVBAR */
 .navbar {
@@ -11,14 +23,9 @@ body {font-family: Arial, sans-serif; background:#0f0f0f; color:#fff;}
 .navbar nav a {margin-left:1rem; color:#ddd; text-decoration:none;}
 .navbar nav a:hover {color:#4f9dff;}
 /* RESET */
-* {margin:0;padding:0;box-sizing:border-box;}
-body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background:#0f0f0f;
-  color:#fff;
-  line-height:1.6;
+* {margin:0;padding:0;box-sizing:border-box; text-decoration: none;
 }
-a {text-decoration:none; color:inherit;}
+
 
 /* NAV */
 .navbar {
@@ -52,18 +59,13 @@ a {text-decoration:none; color:inherit;}
 
 .logo h4{
   animation: changeColor 3s infinite;
-}
-@keyframes changeColor {
-  50% { color: red }
+  color: red;
 }
 
 .logo span {
   color:#1f84ff;
-  animation: changing 3.5s infinite;
 }
-@keyframes changing {
-  50% { color: white; }
-}
+
 .navbar nav a {
   margin-left:1.5rem;
   font-size:1rem;
@@ -308,7 +310,6 @@ a {text-decoration:none; color:inherit;}
   background-color: #181818;
   padding: 60px 20px 30px;
   font-family: 'Inter', sans-serif;
-  margin-top: 4rem;
 }
 
 .footer-container {

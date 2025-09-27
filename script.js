@@ -91,48 +91,43 @@ document.querySelectorAll(".learn-more").forEach(btn => {
 
 
 
-  // Popup open on "Book Now"
-  document.querySelectorAll(".learn-more").forEach(btn => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      // Car name pick karega
-      let carName = btn.closest(".border-box").querySelector("p").innerText;
-
-      // Show popup
-      document.getElementById("popupForm").style.display = "flex";
-      document.getElementById("car").value = carName;
-    });
-  });
-
-  // Close popup
-  document.getElementById("closePopup").addEventListener("click", () => {
-    document.getElementById("popupForm").style.display = "none";
-  });
-
-  // WhatsApp booking
-  document.getElementById("carBookingForm").addEventListener("submit", function(e) {
+// Jab car par click ho → uska naam form me set karo
+document.querySelectorAll(".learn-more").forEach(btn => {
+  btn.addEventListener("click", (e) => {
     e.preventDefault();
 
-    let name = document.getElementById("name").value;
-    let phone = document.getElementById("phone").value;
-    let car = document.getElementById("car").value;
-    let date = document.getElementById("date").value;
-    let pickup = document.getElementById("pickup").value;
-    let message = document.getElementById("message").value;
+    let carBox = btn.closest(".border-box");
+    let carName = carBox.querySelector("p").innerText;
 
-    let whatsappNumber = "+923004221975";  
+    // Set car name in form
+    document.getElementById("car").value = carName;
 
-    let whatsappURL = `https://wa.me/${923004221975}?text=
-    *Car Booking Request*%0A
-    Name: ${name}%0A
-    Phone: ${phone}%0A
-    Car: ${car}%0A
-    Date: ${date}%0A
-    Pickup: ${pickup}%0A
-    Notes: ${message}`;
-
-    window.open(whatsappURL, "index.html");
+    // Smooth scroll to form
+    document.getElementById("carBookingSection").scrollIntoView({ behavior: "smooth" });
   });
+});
 
+// WhatsApp booking
+document.getElementById("carBookingForm").addEventListener("submit", function(e) {
+  e.preventDefault();
 
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let car = document.getElementById("car").value;
+  let date = document.getElementById("date").value;
+  let pickup = document.getElementById("pickup").value;
+  let message = document.getElementById("message").value;
+
+  let whatsappNumber = "923004221975"; // apna number (without +)
+
+  let whatsappURL = `https://wa.me/${923004221975}?text=
+*Car Booking Request*%0A
+Name: ${name}%0A
+Phone: ${phone}%0A
+Car: ${car}%0A
+Date: ${date}%0A
+Pickup: ${pickup}%0A
+Notes: ${message}`;
+
+  window.open(whatsappURL, "_blank");
+});

@@ -61,10 +61,24 @@
   <!-- Tourist Video Section -->
 <section class="tourist-video">
   <video autoplay muted loop playsinline>
-    <source src="images/car-video.mp4" type="video/mp4">
+    <source src="images/touristvideo.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </section>
+
+
+<!-- Floating Buttons -->
+<div class="floating-buttons">
+  <!-- WhatsApp -->
+  <a href="https://wa.me/923004221975" target="_blank" class="whatsapp-btn" title="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Phone -->
+  <a href="tel:+923004111183" class="phone-btn" title="Call Us">
+    📞
+  </a>
+</div>
 
 
 
@@ -122,20 +136,21 @@
 
 <section class="rent-gallery">
   <div class="rent-heading">
-    <h2></h2>Rent a Car & Luxury Coaster</h2>
-    <p>Choose your ride from our wide collection</p>
+    <h2>Drive in Style, Travel in Comfort</h2>
+<p>From luxury coasters, your perfect ride awaits.</p>
+
   </div>
 
   <div class="rent-grid">
     <img src="images/tour1.png" alt="Car Rental">
     <img src="images/tourpic1.jpg" alt="Car Rental">
-    <img src="images/tourpic1.webp" alt="Car Rental">
+    <img src="images/tourpic10.png" alt="Car Rental">
     <img src="images/tourpic2.jpg" alt="Car Rental">
     <img src="images/tourpic3.jpg" alt="Car Rental">
-    <img src="images/carpic10.jpg" alt="Car Rental">
+    <img src="images/tourpic1.png" alt="Car Rental">
     <img src="images/carpic4.jpg" alt="Car Rental">
     <img src="images/tourpic2.png" alt="Car Rental">
-    <img src="images/tourpic9.jpg" alt="Car Rental">
+    <img src="images/tourpic11.png" alt="Car Rental">
   </div>
 </section>
 
@@ -182,77 +197,91 @@
 
   
 
+<!-- Hotels Section -->
 <section class="hotel-section">
   <div class="hotel-heading">
-    <h2>Our Hotels</h2>
-    <p>Book your stay in our top-rated hotels with exclusive offers.</p>
+    <h2>Top Hotels & Luxury Stays</h2>
+    <p>Book your stay with comfort, style, and the best hospitality.</p>
   </div>
 
   <div class="hotel-grid">
+    <!-- Hotel 1 -->
     <div class="hotel-card">
-      <img src="images/hotalpic1.png" alt="Hotel One">
+      <img src="images/hotalpic1.png" alt="Hotel Oban">
       <div class="hotel-info">
         <h3>Hotel Oban</h3>
-        <button class="book-btn" onclick="openForm('Hotel Oban', '5000', 'images/hotalpic1.png')">Book Now</button>
+        <p>Starting from PKR 5,000/night</p>
+        <button class="book-btn" onclick="openForm('Hotel Oban','5000','images/hotalpic1.png')">Book Now</button>
       </div>
     </div>
 
+    <!-- Hotel 2 -->
     <div class="hotel-card">
-      <img src="images/hotalpic2.png" alt="Hotel Pearl">
+      <img src="images/hotalpic2.png" alt="Hotel Park Lane">
       <div class="hotel-info">
         <h3>Hotel Park Lane</h3>
-        <button class="book-btn" onclick="openForm('Hotel Park Lane', '7000', 'images/hotalpic2.png')">Book Now</button>
+        <p>Starting from PKR 7,000/night</p>
+        <button class="book-btn" onclick="openForm('Hotel Park Lane','7000','images/hotalpic2.png')">Book Now</button>
       </div>
     </div>
 
+    <!-- Hotel 3 -->
     <div class="hotel-card">
       <img src="images/hotalpic3.png" alt="Luxury Ramada">
       <div class="hotel-info">
         <h3>Luxury Ramada</h3>
-        <button class="book-btn" onclick="openForm('Luxury Ramada', '8500', 'images/hotalpic3.png')">Book Now</button>
+        <p>Starting from PKR 8,500/night</p>
+        <button class="book-btn" onclick="openForm('Luxury Ramada','8500','images/hotalpic3.png')">Book Now</button>
       </div>
     </div>
-    <!-- aur hotels same structure... -->
-     <div class="hotel-card">
-    <img src="images/hotalpic4.png" alt="Grand Palace"> 
-  <div class="hotel-info">
-    <h3>Hotel Emporium</h3> 
-    <button class="book-btn" onclick="openForm('Hotel Emporium', '12000', 'images/hotalpic4.png')">Book Now</button> 
-  </div> 
-</div> 
-<div class="hotel-card">
-  <img src="images/hotalpic5.png" alt="Elite Stay"> 
-  <div class="hotel-info"> 
-    <h3>Parl Stay</h3> 
-    <button class="book-btn" onclick="openForm('Parl Stay', '9500', 'images/hotalpic5.png')">Book Now</button> 
-  </div> 
-</div> 
-<div class="hotel-card"> 
-  <img src="images/hotalpic6.png" alt="Skyline Hotel"> 
-  <div class="hotel-info"> 
-    <h3>Skyline Hotel</h3> 
-    <button class="book-btn" onclick="openForm('Skyline Hotel', '11000', 'images/hotalpic6.png')">Book Now</button> 
-  </div> 
-</div>
- </div> </section>
+
+    <!-- Hotel 4 -->
+    <div class="hotel-card">
+      <img src="images/hotalpic4.png" alt="Hotel Pearl Continental">
+      <div class="hotel-info">
+        <h3>Hotel Pearl Continental</h3>
+        <p>Starting from PKR 9,000/night</p>
+        <button class="book-btn" onclick="openForm('Hotel Pearl Continental','9000','images/hotalpic4.png')">Book Now</button>
+      </div>
+    </div>
+
+    <!-- Hotel 5 -->
+    <div class="hotel-card">
+      <img src="images/hotalpic5.png" alt="Serena Hotel">
+      <div class="hotel-info">
+        <h3>Serena Hotel</h3>
+        <p>Starting from PKR 12,000/night</p>
+        <button class="book-btn" onclick="openForm('Serena Hotel','12000','images/hotalpic5.png')">Book Now</button>
+      </div>
+    </div>
+
+    <!-- Hotel 6 -->
+    <div class="hotel-card">
+      <img src="images/hotalpic6.png" alt="Marriott Hotel">
+      <div class="hotel-info">
+        <h3>Marriott Hotel</h3>
+        <p>Starting from PKR 15,000/night</p>
+        <button class="book-btn" onclick="openForm('Marriott Hotel','15000','images/hotalpic6.png')">Book Now</button>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ⭐ Booking Form Neeche Fixed -->
-<section id="bookingSection" style="display:none; margin-top:30px;">
+<!-- Booking Form -->
+<section id="bookingSection" style="margin-top:40px;">
   <div class="booking-form">
     <h2>Hotel Booking</h2>
-    <img id="hotelImage" src="" alt="Hotel Image" style="max-width:200px; border-radius:10px; margin-bottom:10px;">
-    <h3 id="popupHotelName"></h3>
+    <img id="hotelImage" src="images/hotalpic1.png" alt="Hotel Image" style="max-width:200px; border-radius:10px; margin-bottom:10px;">
+    <h3 id="popupHotelName">Select a hotel to see details</h3>
 
     <form id="hotelForm">
       <input type="hidden" id="hotelName">
       <input type="hidden" id="hotelPrice">
 
-      <label>Name:</label>
+      <label>Your Name:</label>
       <input type="text" id="custName" required>
 
-      <label>Email:</label>
+      <label>Your Email:</label>
       <input type="email" id="custEmail" required>
 
       <label>Check-in Date:</label>
@@ -261,11 +290,10 @@
       <label>Check-out Date:</label>
       <input type="date" id="checkout" required>
 
-      <button type="submit">Book Now</button>
+      <button type="submit"></button>Booking Now</button>
     </form>
   </div>
 </section>
-
 
 
 
@@ -313,7 +341,6 @@
 <a href="tel:+923334111183"><p>0333-4111183</p></a>
     <div class="social-icons">
   <a href="https://www.facebook.com/profile.php?id=100071711990927" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-  <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
   <a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a>
   <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
 </div>
@@ -364,37 +391,39 @@
 
 
 
-  function openForm(hotelName, hotelPrice, hotelImg) {
-    document.getElementById("bookingSection").style.display = "block";
-    document.getElementById("hotelImage").src = hotelImg;
-    document.getElementById("popupHotelName").innerText = hotelName;
-    document.getElementById("hotelName").value = hotelName;
+function openForm(name, price, image) {
+  document.getElementById("popupHotelName").textContent = name + " - PKR " + price + "/night";
+  document.getElementById("hotelImage").src = image;
+  document.getElementById("hotelName").value = name;
+  document.getElementById("hotelPrice").value = price;
 
-    // Scroll form tak
-    document.getElementById("bookingSection").scrollIntoView({ behavior: "smooth" });
-  }
+  // scroll to form
+  document.getElementById("bookingSection").scrollIntoView({ behavior: "smooth" });
+}
 
-  document.getElementById("hotelForm").addEventListener("submit", function(e){
-    e.preventDefault();
+const WHATSAPP_NUMBER = "923004221975";
 
-    let hotel = document.getElementById("hotelName").value;
-    let name = document.getElementById("custName").value;
-    let email = document.getElementById("custEmail").value;
-    let checkin = document.getElementById("checkin").value;
-    let checkout = document.getElementById("checkout").value;
+document.getElementById("hotelForm").addEventListener("submit", function(e){
+  e.preventDefault();
 
-    let message = `*Hotel Booking Request*%0A
-🏨 Hotel: ${hotel}%0A
-👤 Name: ${name}%0A
-📧 Email: ${email}%0A
+  const customerName = document.getElementById("custName").value.trim();
+  const customerEmail = document.getElementById("custEmail").value.trim();
+  const checkin = document.getElementById("checkin").value;
+  const checkout = document.getElementById("checkout").value;
+  const hotel = document.getElementById("hotelName").value;
+  const price = document.getElementById("hotelPrice").value;
+
+  const message = `*🏨 New Hotel Booking*%0A
+👤 Name: ${customerName}%0A
+📧 Email: ${customerEmail}%0A
 📅 Check-in: ${checkin}%0A
-📅 Check-out: ${checkout}`;
+📅 Check-out: ${checkout}%0A
+🏨 Hotel: ${hotel}%0A
+💵 Price: PKR ${price}/night`;
 
-    let phone = "923004221975";  
-    let url = `https://wa.me/${phone}?text=${message}`;
-    window.open(url, "_blank");
-  });
-
+  const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+  window.open(waLink, "_blank");
+});
   </script>
 
 
