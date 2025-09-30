@@ -166,9 +166,66 @@ a {text-decoration:none; color:inherit;}
 .tourist-video {
   position: relative;
   width: 100%;
-  height: 75vh; /* screen height ka 50% */
+  height: 77vh; /* screen height ka 50% */
   overflow: hidden;
   margin-top: 6.5rem;
+}
+.image {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+  margin-top: -2rem;
+  position: relative;
+}
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 80px;
+  max-width: 1100px;
+  width: 100%;
+  padding: 0 20px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.image-gallery img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.image-gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Animation on load */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .image-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .image-gallery {
+    grid-template-columns: 1fr;
+  }
 }
 
 .tourist-video video {
@@ -190,25 +247,135 @@ a {text-decoration:none; color:inherit;}
   text-align: center;
   padding: 10px;
   background: rgba(0, 0, 0, 0.3); /* halka dark overlay */
+  animation: fadeSlide 2s ease;
+}
+@keyframes fadeSlide {
+  0%{
+    opacity: 0;
+    transform: translateY(-70px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.4); /* halka dark effect */
+  padding: 20px;
+}
+
+.overlay-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 90%;
+  max-width: 2500px;
+  gap: 30rem;
+}
+
+.overlay-left, .overlay-right {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+.overlay-left h2, .overlay-right h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #ffdf5b; /* thoda golden look */
+}
+
+.overlay-left p, .overlay-right p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .overlay-content {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  .overlay-left, .overlay-right {
+    text-align: center;
+  }
 }
 
 
 /* Mobile Devices */
-@media (max-width: 768px) {
-  .tourist-video {
-    height: 45vh; /* mobile me thoda kam height */
+/* ✅ Tablet (992px se chhota) */
+@media (max-width: 992px) {
+  .overlay-content {
+    flex-direction: column;   /* side-by-side → neeche neeche */
+    gap: 20px;
+    text-align: center;
+    align-items: center;
   }
 
-
+  .overlay-left,
+  .overlay-right {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+  }
 }
 
-/* Very Small Phones */
-@media (max-width: 480px) {
+/* ✅ Mobile (768px se chhota) */
+@media (max-width: 768px) {
   .tourist-video {
-    height: 50vh; 
+    height: auto;       /* height auto ho jaye */
+    min-height: 75vh;   /* thoda minimum height de di */
   }
 
+  .overlay-left h2,
+  .overlay-right h2 {
+    font-size: 1.4rem;
+  }
 
+  .overlay-left p,
+  .overlay-right p {
+    font-size: 0.95rem;
+  }
+}
+
+/* ✅ Very Small Phones (480px se chhota) */
+@media (max-width: 480px) {
+  .overlay-content {
+    width: 100%;
+    gap: 15px;
+  }
+
+  .overlay-left,
+  .overlay-right {
+    padding: 12px;
+  }
+
+  .overlay-left h2,
+  .overlay-right h2 {
+    font-size: 1.2rem;
+  }
+
+  .overlay-left p,
+  .overlay-right p {
+    font-size: 0.9rem;
+  }
 }
 
 
@@ -220,7 +387,6 @@ a {text-decoration:none; color:inherit;}
   padding: 50px 20px;
   color: white;
 }
-
 .tour-heading h1 {
   font-size: 3rem;
   margin-bottom: 15px;
@@ -583,6 +749,11 @@ a {text-decoration:none; color:inherit;}
 .booking-form button:hover {
   background: #218838;
 }
+
+
+
+
+
 
 
 /* Footer Section */

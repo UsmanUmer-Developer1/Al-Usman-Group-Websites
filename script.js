@@ -107,19 +107,17 @@ document.querySelectorAll(".learn-more").forEach(btn => {
   });
 });
 
+
 // WhatsApp booking
 document.getElementById("carBookingForm").addEventListener("submit", function(e) {
   e.preventDefault();
-
   let name = document.getElementById("name").value;
   let phone = document.getElementById("phone").value;
   let car = document.getElementById("car").value;
   let date = document.getElementById("date").value;
   let pickup = document.getElementById("pickup").value;
   let message = document.getElementById("message").value;
-
   let whatsappNumber = "923004221975"; // apna number (without +)
-
   let whatsappURL = `https://wa.me/${923004221975}?text=
 *Car Booking Request*%0A
 Name: ${name}%0A
@@ -128,6 +126,10 @@ Car: ${car}%0A
 Date: ${date}%0A
 Pickup: ${pickup}%0A
 Notes: ${message}`;
-
   window.open(whatsappURL, "_blank");
 });
+
+
+
+
+

@@ -97,8 +97,8 @@
 <div class="services-box " >
 <div class="border">
     <div class="border-box ">
-   <img src="images/palcooil.jpg" alt="">
-   <p>PALCO</p>
+   <img src="images/oilprpoduct8.png" alt="">
+   <p>PALCO WIZZ</p>
    <h5>PALCO OIL </h5>
 <h3>Flat 5% Off</h3>
       <button class="learn-more book-now">Book Now <i class="fa-solid fa-right-long"></i></button>
@@ -106,7 +106,7 @@
     </div>
 
     <div class="border-box">
-      <img src="images/engineoil13.png" alt="">
+      <img src="images/oilproduct1.webp" alt="">
      <p> KIXX </p>
      <h5>KIXX 5W30 G1 3L – Super Way</h5>
 <h3>Flat 5% Off</h3>
@@ -114,7 +114,7 @@
 </div>
 
     <div class="border-box">
-      <img src="images/Shelloil.png" alt="">
+      <img src="images/oilproduct3.webp" alt="">
       <p>Shell</p>
       <h5>Shell Rotella T5 Synthetic Blend 10W-30 Diesel Pakistan</h5>
 <h3>Flat 5% OFf</h3>
@@ -127,7 +127,7 @@
 
  <div class="border-box2">
   <div class="border-box">
-    <img src="images/engineoil14.png" alt="">
+    <img src="images/oilproduct4.webp" alt="">
     <p>CALTEX</p>
     <h5> CALTEX Havoline Engine Oil - Fully Synthetic SAE 5W-30 (4L) </h5>
 <h3>Flat 5% OFf</h3>
@@ -145,7 +145,7 @@
 </div>
 
   <div class="border-box">
-    <img src="images/palco2.jpg" alt="">
+    <img src="images/oilproduct5.png" alt="">
     <p>PALCO </p>
     <h5>PALCO WIZZ  </h5>
 <h3>Flat 5% OFF</h3>
@@ -154,17 +154,10 @@
 </div>
  </div>
 
- 
-
-
-
-
-
- 
 
  <div class="border-box2">
   <div class="border-box">
-    <img src="images/engineoil10.png" alt="">
+    <img src="images/oilproduct6.png" alt="">
     <p>Zic </p>
     <h5> Buy Zic Engine Oil 0W-20 - 4 Litre | Engine Oil in Pakistan | PakWheels</h5>
 <h3>Flat 5% OFf</h3>
@@ -181,7 +174,7 @@
 </div>
 
   <div class="border-box">
-    <img src="images/engineoil3.png" alt="">
+    <img src="images/oilproduct7.webp" alt="">
     <p>PSO</p>
     <h5>Pakistan State Oil Company Limited</h5>
 <h3>Flat 5% OFF</h3>
@@ -355,17 +348,14 @@
 
 
 
-
-
-  <div class="booking-box">
-    <h2>Book Your Service</h2>
-    <form id="bookingForm">
-      <input type="text" id="bk-name" placeholder="Your Name" required>
-      <input type="email" id="bk-email" placeholder="Your Email" required>
-      <input type="text" id="bk-phone" placeholder="Your Phone" required>
-
-      <!-- ✅ Services Dropdown -->
-      <select id="bk-product" required>
+<div class="gurage-form">
+<div class="form-box">
+    <h2>Garage Service</h2>
+    <form id="whatsappForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <input type="text" id="phone" placeholder="Your Phone" required>
+      <select id="service" required>
         <option value="" disabled selected>Select Service</option>
         <option value="Car Wash">Car Wash</option>
         <option value="Oil Change">Oil Change</option>
@@ -373,11 +363,10 @@
         <option value="AC Service">AC Service</option>
         <option value="Wheel Alignment">Wheel Alignment</option>
       </select>
-
-      <button type="submit"> Book via WhatsApp</button>
+      <button type="submit">Send to WhatsApp</button>
     </form>
   </div>
-
+  </div>
   
 
 <!-- Footer Section -->
@@ -437,10 +426,7 @@
 
 
 
-<script src="script.js"></script>
-
 <script>
-
   const bookButtons = document.querySelectorAll('.book-now');
     const popup = document.getElementById('popupForm');
     const closeBtn = document.getElementById('closePopup');
@@ -481,14 +467,10 @@
       const name = this.querySelector('input[placeholder="Your Name"]').value;
       const phone = this.querySelector('input[placeholder="Your Phone"]').value;
       const product = selectedProduct.value;
-
       const whatsappUrl = `https://wa.me/923004221975?text=Hello, my name is ${name}. I want to book ${product}. My phone: ${phone}`;
       window.open(whatsappUrl, '_blank');
     });
-
-
  const accordions = document.querySelectorAll(".accordion-item");
-
     accordions.forEach(item => {
       const header = item.querySelector(".accordion-header");
       header.addEventListener("click", () => {
@@ -505,32 +487,31 @@
 
 
 
+ 
 
-
-const whatsappNumber = "923004221975"; // ✅ apna WhatsApp number yahan lagao
-    document.getElementById("bookingForm").addEventListener("submit", function(e){
+ document.getElementById("whatsappForm").addEventListener("submit", function(e) {
       e.preventDefault();
 
-      const name = document.getElementById("bk-name").value.trim();
-      const email = document.getElementById("bk-email").value.trim();
-      const phone = document.getElementById("bk-phone").value.trim();
-      const product = document.getElementById("bk-product").value;
+      let name = document.getElementById("name").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let phone = document.getElementById("phone").value.trim();
+      let service = document.getElementById("service").value;
 
-      if(!name || !email || !phone || !product){
-        alert("Please fill all required fields.");
+      if (!name || !email || !phone || !service) {
+        alert("Please fill all fields.");
         return;
       }
 
-      // ✅ WhatsApp ka sahi message format (%0A = line break)
-      const message = `*📌 New Booking Request*%0A` +
-                      `👤 Name: ${name}%0A` +
-                      `📧 Email: ${email}%0A` +
-                      `📞 Phone: ${phone}%0A` +
-                      `🛠 Service: ${product}`;
+      // Apna WhatsApp number yahan daalo (country code ke sath, bina + ke)
+      let businessNumber = "923004221975";
 
-      const waLink = `https://wa.me/${whatsappNumber}?text=${message}`;
-      window.open(waLink, "_blank");
+      let message = `*New Booking*%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AService: ${service}`;
+      let url = `https://api.whatsapp.com/send?phone=${businessNumber}&text=${message}`;
+
+      // WhatsApp open
+      window.location.href = url;
     });
 </script>
+<script src="script.js"></script>
 </body>
 </html>

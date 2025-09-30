@@ -59,12 +59,50 @@
 
 
   <!-- Tourist Video Section -->
+<!-- Tourist Video Section -->
 <section class="tourist-video">
   <video autoplay muted loop playsinline>
     <source src="images/touristvideo.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
+
+  <!-- Overlay Text -->
+  <div class="video-overlay">
+    <div class="overlay-content">
+      <!-- Left Side -->
+      <div class="overlay-left">
+        <h2>We are providing motor home rental services</h2>
+        <p>
+          For all over Pakistan now you travel everywhere in Pakistan without paying any charges to hotel. <br>
+          Just stay in your van, <br>
+          <strong>Enjoy your journey.</strong>
+        </p>
+      </div>
+
+      <!-- Right Side -->
+      <div class="overlay-right">
+        <h2>Feel like home while traveling anywhere in Pakistan</h2>
+        <p>
+          Attach bath, kitchen, fridge, microwave, stove, connected with solar energy including air conditioner and generator backup.
+        </p>
+      </div>
+    </div>
+  </div>
 </section>
+
+ <!-- Image Gallery (1 to 8 rows) -->
+<div class="image">
+  <div class="image-gallery">
+    <img src="images/videopic1.jpg" alt="pic1">
+    <img src="images/videopic2.jpg" alt="pic2">
+    <img src="images/videopic3.jpg" alt="pic3">
+    <img src="images/videopic4.jpg" alt="pic4">
+    <img src="images/videopic5.jpg" alt="pic5">
+    <img src="images/videpic6.jpg" alt="pic6">
+  </div>
+</div>
+
+
 
 
 <!-- Floating Buttons -->
@@ -164,11 +202,9 @@
     <!-- Name -->
     <label for="name">Name:</label>
     <input type="text" id="name" placeholder="Enter your name" required>
-
     <!-- Email -->
     <label for="email">Email:</label>
     <input type="email" id="email" placeholder="Enter your email" required>
-
     <!-- Tourist Destination -->
     <label for="destination">Select Destination:</label>
     <select id="destination" required>
@@ -181,15 +217,12 @@
       <option value="Cholistan">Cholistan Desert</option>
       <option value="Islamabad">Islamabad</option>
     </select>
-
     <!-- Days -->
     <label for="days">Total Days:</label>
     <input type="number" id="days" min="1" max="30" value="1">
-
     <!-- Comments -->
     <label for="comments">Additional Comments:</label>
     <textarea id="comments" rows="4" placeholder="Write something..."></textarea>
-
     <!-- Button -->
     <button type="submit">Book Now</button>
   </form>
@@ -264,6 +297,26 @@
         <button class="book-btn" onclick="openForm('Marriott Hotel','15000','images/hotalpic6.png')">Book Now</button>
       </div>
     </div>
+
+      <!-- Hotel 3 -->
+    <div class="hotel-card">
+      <img src="images/hotalpic3.png" alt="Luxury Ramada">
+      <div class="hotel-info">
+        <h3>Luxury Ramada</h3>
+        <p>Starting from PKR 8,500/night</p>
+        <button class="book-btn" onclick="openForm('Luxury Ramada','8500','images/hotalpic3.png')">Book Now</button>
+      </div>
+    </div>
+
+    <!-- Hotel 4 -->
+    <div class="hotel-card">
+      <img src="images/hotalpic4.png" alt="Hotel Pearl Continental">
+      <div class="hotel-info">
+        <h3>Hotel Pearl Continental</h3>
+        <p>Starting from PKR 9,000/night</p>
+        <button class="book-btn" onclick="openForm('Hotel Pearl Continental','9000','images/hotalpic4.png')">Book Now</button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -290,7 +343,7 @@
       <label>Check-out Date:</label>
       <input type="date" id="checkout" required>
 
-      <button type="submit"></button>Booking Now</button>
+      <button type="submit">Booking Now</button>
     </form>
   </div>
 </section>
@@ -396,23 +449,18 @@ function openForm(name, price, image) {
   document.getElementById("hotelImage").src = image;
   document.getElementById("hotelName").value = name;
   document.getElementById("hotelPrice").value = price;
-
   // scroll to form
   document.getElementById("bookingSection").scrollIntoView({ behavior: "smooth" });
 }
-
 const WHATSAPP_NUMBER = "923004221975";
-
 document.getElementById("hotelForm").addEventListener("submit", function(e){
   e.preventDefault();
-
   const customerName = document.getElementById("custName").value.trim();
   const customerEmail = document.getElementById("custEmail").value.trim();
   const checkin = document.getElementById("checkin").value;
   const checkout = document.getElementById("checkout").value;
   const hotel = document.getElementById("hotelName").value;
   const price = document.getElementById("hotelPrice").value;
-
   const message = `*🏨 New Hotel Booking*%0A
 👤 Name: ${customerName}%0A
 📧 Email: ${customerEmail}%0A
@@ -420,11 +468,36 @@ document.getElementById("hotelForm").addEventListener("submit", function(e){
 📅 Check-out: ${checkout}%0A
 🏨 Hotel: ${hotel}%0A
 💵 Price: PKR ${price}/night`;
-
   const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
   window.open(waLink, "_blank");
 });
-  </script>
+
+
+
+
+/// Tourist form Trip Now
+ document.getElementById("tripForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    // Values get karo
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let destination = document.getElementById("destination").value;
+    let days = document.getElementById("days").value;
+    let comments = document.getElementById("comments").value;
+    // WhatsApp number (apna number dalna yahan)
+    let phoneNumber = "923004221975"; // apna WhatsApp number yahan dalna (without +)
+    // Message banaye
+    let message = `*Tour Booking Request*%0A
+Name: ${name}%0A
+Email: ${email}%0A
+Destination: ${destination}%0A
+Days: ${days}%0A
+Comments: ${comments}`;
+    // WhatsApp link open kare
+    let url = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(url, "_blank");
+  });
+</script>
 
 
 </body>

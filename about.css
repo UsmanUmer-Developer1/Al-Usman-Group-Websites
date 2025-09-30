@@ -265,6 +265,97 @@ body{
 }
 
 
+/* Chat Organization form */
+.chat {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #fff;
+  border-radius: 15px;
+  max-width: 900px;
+  margin: 50px auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+.chat h1 {
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  position: relative;
+  display: inline-block;
+  animation: slideDown 1.5s ease;
+}
+
+/* Underline effect */
+.chat h1::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 4px;
+  background: #ffdf5b;
+  border-radius: 2px;
+  animation: expandLine 1.2s ease-in-out;
+}
+
+.image-chat {
+  display: flex;
+  justify-content: center;
+}
+
+.image-chat img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  animation: zoomIn 1.5s ease;
+}
+
+/* Hover Animation */
+.image-chat img:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+}
+
+/* Keyframes Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes expandLine {
+  from { width: 0; }
+  to { width: 60%; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .chat {
+    padding: 30px 15px;
+  }
+  .chat h1 {
+    font-size: 2rem;
+  }
+  .image-chat img {
+    max-width: 90%;
+  }
+}
+
+
+
 /* Company Section */
 .company-section {
   padding: 80px 10%;
