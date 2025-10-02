@@ -11,13 +11,7 @@ body {font-family: Arial, sans-serif; background:#0f0f0f; color:#fff;}
 .navbar nav a {margin-left:1rem; color:#ddd; text-decoration:none;}
 .navbar nav a:hover {color:#4f9dff;}
 /* RESET */
-* {margin:0;padding:0;box-sizing:border-box;}
-body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background:#0f0f0f;
-  color:#fff;
-  line-height:1.6;
-}
+
 a {text-decoration:none; color:inherit;}
 
 /* NAV */
@@ -225,6 +219,7 @@ a {text-decoration:none; color:inherit;}
 @media (max-width: 500px) {
   .image-gallery {
     grid-template-columns: 1fr;
+    margin-top: 10rem;
   }
 }
 
@@ -327,6 +322,7 @@ a {text-decoration:none; color:inherit;}
     gap: 20px;
     text-align: center;
     align-items: center;
+    margin-top: 23em;
   }
 
   .overlay-left,

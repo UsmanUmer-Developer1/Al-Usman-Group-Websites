@@ -37,6 +37,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
   <!-- AOS (Animation on Scroll) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+<!-- AOS JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 </head>
 <body>
 
@@ -96,8 +101,8 @@
 <!----------------------------------------------------------
 ------------------------  Services Checking ---------------
 ------------------------------------------------------------>
-<div class="services-box">
-<div class="border">
+<div class="services-box" data-aos="fade-up">
+<div class="border"data-aos="zoom-in">
 
     <!-- Elantra -->
     <div class="border-box">
@@ -137,8 +142,8 @@
 ------------------------  Services Checking ---------------
 ------------------------------------------------------------>
 
-<div class="services-box">
-<div class="border">
+<div class="services-box" data-aos="zoom-in">
+<div class="border" data-aos="zoom-in">
 
     <!-- Suzuki Every -->
     <div class="border-box">
@@ -178,8 +183,8 @@
 ------------------------  Services Checking ---------------
 ------------------------------------------------------------>
 
-<div class="services-box">
-<div class="border">
+<div class="services-box"  data-aos="fade-up">
+<div class="border"  data-aos="fade-up">
 
     <!-- MG HS -->
     <div class="border-box">
@@ -214,7 +219,7 @@
 </div>
 
 
-<div class="border-box2">
+<div class="border-box2" data-aos="zoom-in">
 
     <!-- Wagon R -->
     <div class="border-box">
@@ -227,7 +232,7 @@
     </div>
 
     <!-- Luxury Bus -->
-    <div class="border-box">
+    <div class="border-box" data-aos="zoom-in">
        <img src="images/carpic12.jpg" alt="">
        <p>Luxury Bus</p>
        <h5>45-50 Seats <br>
@@ -258,7 +263,7 @@
 
 
 <!-- Wrapper -->
-<div class="form-wrapper">
+<div class="form-wrapper" data-aos="zoom-in">
   <div class="booking-form" id="carBookingSection">
     <h2>Car Booking Form</h2>
     <form id="carBookingForm">
@@ -337,5 +342,36 @@
 
 
 <script src="script.js"></script>
+
+<script>
+  
+    AOS.init({
+    duration: 1200,    // animation ki speed
+    easing: 'ease-in-out',
+    once: false,       // scroll up bhi animation karega
+    mirror: true       // element scroll out hoke phir wapas aaye to animation
+  });
+
+  // Automatically add AOS to all children in main container
+ document.querySelectorAll('section, .card, .blog-card, .team-member, .slide').forEach(el => {
+    el.setAttribute('data-aos', 'fade-up'); 
+});
+
+
+ const animations = ['fade-up','fade-down','fade-left','fade-right','zoom-in','flip-left'];
+document.querySelectorAll('section, .card, .blog-card, .team-member, .slide').forEach((el, i) => {
+  el.setAttribute('data-aos', animations[i % animations.length]);
+});
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    AOS.init({
+      duration: 1200,
+      easing: 'ease-in-out',
+      once: false,
+      mirror: true
+    });
+  });
+</script>
 </body>
 </html>

@@ -37,6 +37,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
   <!-- AOS (Animation on Scroll) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+
 </head>
 <body>
   
@@ -94,9 +96,9 @@
 ------------------------  Services Checking ---------------
 ------------------------------------------------------------>
 
-<div class="services-box " >
+<div class="services-box " data-aos="fade-right">
 <div class="border">
-    <div class="border-box ">
+    <div class="border-box " data-aos="fade-right">
    <img src="images/oilprpoduct8.png" alt="">
    <p>PALCO WIZZ</p>
    <h5>PALCO OIL </h5>
@@ -105,7 +107,7 @@
 
     </div>
 
-    <div class="border-box">
+    <div class="border-box" data-aos="zoom-in">
       <img src="images/oilproduct1.webp" alt="">
      <p> KIXX </p>
      <h5>KIXX 5W30 G1 3L – Super Way</h5>
@@ -125,8 +127,8 @@
 
 
 
- <div class="border-box2">
-  <div class="border-box">
+ <div class="border-box2" data-aos="zoom-in">
+  <div class="border-box" data-aos="zoom-in">
     <img src="images/oilproduct4.webp" alt="">
     <p>CALTEX</p>
     <h5> CALTEX Havoline Engine Oil - Fully Synthetic SAE 5W-30 (4L) </h5>
@@ -144,7 +146,7 @@
 
 </div>
 
-  <div class="border-box">
+  <div class="border-box" >
     <img src="images/oilproduct5.png" alt="">
     <p>PALCO </p>
     <h5>PALCO WIZZ  </h5>
@@ -155,8 +157,8 @@
  </div>
 
 
- <div class="border-box2">
-  <div class="border-box">
+ <div class="border-box2" data-aos="zoom-in">
+  <div class="border-box"  data-aos="zoom-in">
     <img src="images/oilproduct6.png" alt="">
     <p>Zic </p>
     <h5> Buy Zic Engine Oil 0W-20 - 4 Litre | Engine Oil in Pakistan | PakWheels</h5>
@@ -192,7 +194,7 @@
 
   <section class="section">
     <!-- Left Side Text -->
-    <div class="section-text">
+    <div class="section-text" data-aos="fade-left">
       <h2>Why Choose All Usman Lubricants?</h2>
       <p>
         Hum apko Rent Car services, high-quality Engine Oil aur professional Workshop services provide karte hain. 
@@ -236,14 +238,14 @@
     </div>
 
     <!-- Right Side Image -->
-    <div class="section-img">
+    <div class="section-img"  data-aos="fade-right">
       <img src="images/Servicespic.png" alt="Workshop">
     </div>
   </section>
 
 
 
-<section class="image-gallery">
+<section class="image-gallery"  data-aos="zoom-in">
   <div class="gallery-item">
     <img src="images/machinespic.png" alt="Image 1">
   </div>
@@ -259,14 +261,14 @@
 
 
   
-<div class="services-section">
+<div class="services-section"  data-aos="zoom-in">
   <h2>Our Services</h2>
   <p>
     We provide a wide range of automobile services that are customized to your needs.
     From maintenance and diagnostics to repairs and tune-ups, our skilled experts have you covered.
   </p>
 
-  <div class="services-container">
+  <div class="services-container"  data-aos="zoom-in">
     <!-- Box 1 -->
     <div class="service-box">
       <i class="fas fa-tools"></i>
@@ -329,7 +331,7 @@
 
 
   <!-- Popup Form -->
-  <div class="popup" id="popupForm">
+  <div class="popup" id="popupForm"  data-aos="zoom-in">
     <div class="popup-content">
       <span class="close-btn" id="closePopup">&times;</span>
       <img id="popupImg" src="" alt="">
@@ -348,7 +350,7 @@
 
 
 
-<div class="gurage-form">
+<div class="gurage-form"  data-aos="zoom-in">
 <div class="form-box">
     <h2>Garage Service</h2>
     <form id="whatsappForm">
@@ -511,7 +513,17 @@
       // WhatsApp open
       window.location.href = url;
     });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    AOS.init({
+      duration: 1200,
+      easing: 'ease-in-out',
+      once: false,
+      mirror: true
+    });
+  });
 </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

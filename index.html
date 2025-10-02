@@ -37,6 +37,11 @@
   <!-- Icons CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
   <!-- AOS (Animation on Scroll) -->
+  <!-- AOS CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+<!-- AOS JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 </head>
 <body>
@@ -57,12 +62,27 @@
   </header>
 
 
-<!-- HERO SECTION -->
-<div class="card-container">
-  <!-- BACKGROUND VIDEO -->
 
+  <!-- Background Video --->
+<div class="video-section">
+  <video autoplay muted loop id="bg-video">
+    <source src="images/homevideo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Down Arrow -->
+  <div class="down-arrow">
+    <span>&#8595;</span>
+  </div>
+</div>
+
+
+
+
+
+<div class="card-container">
   <!-- CARD 1 -->
-  <a href="tourist.html" class="card">
+  <a href="tourist.html" class="card gsap-card">
     <div class="card-img">
       <img src="images/tour1.png" alt="Tourist Page">
       <div class="card-overlay">
@@ -75,8 +95,8 @@
     </div>
   </a>
 
-  <!-- CARD 3 -->
-  <a href="engine.html" class="card">
+  <!-- CARD 2 -->
+  <a href="engine.html" class="card gsap-card">
     <div class="card-img">
       <img src="images/oilproduct4.webp" alt="Engine Service">
       <div class="card-overlay">
@@ -89,8 +109,8 @@
     </div>
   </a>
 
-   <!-- CARD 2 -->
-  <a href="car.html" class="card">
+  <!-- CARD 3 -->
+  <a href="car.html" class="card gsap-card">
     <div class="card-img">
       <img src="images/rentcar.png" alt="Rent a Car">
       <div class="card-overlay">
@@ -103,9 +123,8 @@
     </div>
   </a>
 
-
   <!-- CARD 4 -->
-  <a href="renthouse.html" class="card">
+  <a href="renthouse.html" class="card gsap-card">
     <div class="card-img">
       <img src="images/Renthouse.png" alt="Rent a House">
       <div class="card-overlay">
@@ -123,38 +142,38 @@
 
 
 <!-- BLOG / GALLERY -->
-
-  <div class="slider" data-aos="zoom-in">
-    <div class="slides" id="slides" data-aos="zoom-in">
-      <div class="slide">
+<section class="gallery-section">
+  <div class="slider">
+    <div class="slides" id="slides">
+      <div class="slide gsap-slide">
         <img src="images/Murrepic.png" alt="Murree Hills">
         <div class="caption">Murree Hills – Cool breeze, pine trees & family vibes.</div>
       </div>
-      <div class="slide">
+      <div class="slide gsap-slide">
         <img src="images/hunzapic.png" alt="Hunza Valley">
         <div class="caption">Hunza Valley – Snow-capped peaks and crystal clear rivers.</div>
       </div>
-      <div class="slide">
+      <div class="slide gsap-slide">
         <img src="images/badshahmasjidpic.png" alt="Fairy Meadows">
         <div class="caption">BadShah Masjid Lahore</div>
       </div>
-      <div class="slide">
+      <div class="slide gsap-slide">
         <img src="images/skardupic.png" alt="Skardu">
         <div class="caption">Skardu – Lakes, mountains and heavenly landscapes.</div>
       </div>
-      <div class="slide">
+      <div class="slide gsap-slide">
         <img src="images/sawat.png" alt="Swat Valley">
         <div class="caption">Swat Valley – The Switzerland of the East.</div>
       </div>
-      <div class="slide">
+      <div class="slide gsap-slide">
         <img src="images/Nellum.png" alt="Neelum Valley">
         <div class="caption">Neelum Valley – A paradise of rivers and meadows.</div>
       </div>
-      <div class="slide">
+      <div class="slide gsap-slide">
         <img src="images/islamabadpic.png" alt="Kumrat Valley">
-        <div class="caption">islamad beautiful City.</div>
+        <div class="caption">Islamabad – Beautiful City.</div>
       </div>
-      <div class="slide">
+      <div class="slide gsap-slide">
         <img src="images/colidistan.png" alt="Cholistan Desert">
         <div class="caption">Cholistan Desert – Golden sands & camel caravans.</div>
       </div>
@@ -165,7 +184,6 @@
     <button class="btn next" onclick="nextSlide()">❯</button>
   </div>
 </section>
-
 
 
 
@@ -376,6 +394,39 @@ function scrollRight() {
 }
 leftBtn.addEventListener('click', scrollLeft);
 rightBtn.addEventListener('click', scrollRight); 
+
+
+
+
+
+
+ 
+    AOS.init({
+    duration: 1200,    // animation ki speed
+    easing: 'ease-in-out',
+    once: false,       // scroll up bhi animation karega
+    mirror: true       // element scroll out hoke phir wapas aaye to animation
+  });
+
+  // Automatically add AOS to all children in main container
+  document.querySelectorAll('section, .card, .blog-card, .team-member, .slide').forEach(el => {
+    el.setAttribute('data-aos', 'fade-up'); // default animation
+  });
+
+  const animations = ['fade-up','fade-down','fade-left','fade-right','zoom-in','flip-left'];
+document.querySelectorAll('section, .card, .blog-card, .team-member, .slide').forEach((el, i) => {
+  el.setAttribute('data-aos', animations[i % animations.length]);
+});
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    AOS.init({
+      duration: 1200,
+      easing: 'ease-in-out',
+      once: false,
+      mirror: true
+    });
+  });
   </script>
   
 </body>
